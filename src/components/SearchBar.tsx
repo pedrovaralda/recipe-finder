@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { FaSearch } from 'react-icons/fa'; // Importa o ícone de pesquisa
 import './SearchBar.css';
 
 interface SearchBarProps {
@@ -7,7 +7,6 @@ interface SearchBarProps {
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
-  const { t } = useTranslation(); // Hook para tradução
   const [input, setInput] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,13 +15,16 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <input
-      type="text"
-      value={input}
-      onChange={handleChange}
-      placeholder={t('search_placeholder')} // Texto traduzido
-      className="search-bar"
-    />
+    <div className="search-bar-container">
+      <FaSearch className="search-bar-icon" />
+      <input
+        type="text"
+        value={input}
+        onChange={handleChange}
+        placeholder="Digite os ingredientes..."
+        className="search-bar"
+      />
+    </div>
   );
 };
 

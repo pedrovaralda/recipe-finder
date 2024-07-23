@@ -1,7 +1,43 @@
+/* Contêiner para SearchBar e ícone */
+.search-bar-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Estilo do ícone de pesquisa */
+.search-bar-icon {
+  position: absolute;
+  top: 50%;
+  left: 43px;
+  transform: translateY(-50%);
+  color: #537e28;
+  font-size: 18px;
+}
+
+/* Estilo moderno para a SearchBar */
 .search-bar {
   width: 80%;
-  padding: 10px;
-  margin: 20px auto;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 12px 20px;
+  padding-left: 40px; /* Espaço para o ícone */
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  font-size: 16px;
+  outline: none;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.search-bar:focus {
+  border-color: #537e28;
+  box-shadow: 0 4px 12px rgba(83, 126, 40, 0.2);
+}
+
+/* Placeholder */
+.search-bar::placeholder {
+  color: #999;
+  font-style: italic;
+  font-family: 'Untitled Serif';
 }
